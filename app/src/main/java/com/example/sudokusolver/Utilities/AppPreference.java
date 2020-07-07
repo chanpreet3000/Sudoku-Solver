@@ -17,6 +17,7 @@ public class AppPreference {
     private final String PREF_NAME = "pref";
     private final String is4X4 = "4X4";
     private final String is6X6 = "6X6";
+    private final String bananas = "Bananas";
 
     public SharedPreferences sharedPref;
     private SharedPreferences.Editor mEditor;
@@ -47,9 +48,19 @@ public class AppPreference {
         mEditor.commit();
     }
 
+    private void saveData(String key, int val) {
+        SharedPreferences.Editor mEditor = sharedPref.edit();
+        mEditor.putInt(key, val);
+        mEditor.commit();
+    }
+
 
     private boolean getBooleanData(String key, boolean defValue) {
         return sharedPref.getBoolean(key, defValue);
+    }
+
+    private int getIntData(String key, int defValue) {
+        return sharedPref.getInt(key, defValue);
     }
 
     public boolean getIs4X4() {
@@ -67,6 +78,14 @@ public class AppPreference {
 
     public void setIs6X6(boolean b) {
         saveData(is6X6, b);
+    }
+
+    public int getBananas() {
+        return getIntData(bananas, 5);
+    }
+
+    public void setBananas(int b) {
+        saveData(bananas, b);
     }
 
 }

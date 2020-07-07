@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sudokusolver.Utilities.AppPreference;
 import com.example.sudokusolver.Utilities.BoxInfo;
 import com.example.sudokusolver.R;
 import com.github.jinatonic.confetti.CommonConfetti;
@@ -804,6 +805,7 @@ public class Activity9 extends AppCompatActivity {
                     e9_79.setEnabled(false);
                     e9_80.setEnabled(false);
                     sudokusolved.setText("SUDOKU SOLVED!!!");
+                    AppPreference.getInstance().setBananas(AppPreference.getInstance().getBananas()-1);
                     showKonfetti();
                 } else {
                     point = 0;

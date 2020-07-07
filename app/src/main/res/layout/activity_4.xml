@@ -19,7 +19,7 @@
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
             ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-3327582155652875/9895512295">
+            ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
         </com.google.android.gms.ads.AdView>
         <HorizontalScrollView
             android:id="@+id/horizontalScrollView"

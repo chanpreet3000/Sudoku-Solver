@@ -235,7 +235,7 @@ public class Activity4 extends AppCompatActivity {
                     e4_13.setEnabled(false);
                     e4_14.setEnabled(false);
                     e4_15.setEnabled(false);
-
+                    AppPreference.getInstance().setBananas(AppPreference.getInstance().getBananas()-1);
                     showKonfetti();
 
                     if(!AppPreference.getInstance().getIs4X4())

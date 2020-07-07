@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "540759322035",
+    "firebase_url": "https://sukodu-solver.firebaseio.com",
+    "project_id": "sukodu-solver",
+    "storage_bucket": "sukodu-solver.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:540759322035:android:bbbbfce9549f4769beafc6",
+        "android_client_info": {
+          "package_name": "com.example.sudokusolver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "540759322035-9gv78h4fk1n60f9elen61djfuu5hnqn1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkJi1KDCKoQQA7oSDDTOIz7qppSKJXRbs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "540759322035-9gv78h4fk1n60f9elen61djfuu5hnqn1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

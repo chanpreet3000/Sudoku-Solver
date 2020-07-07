@@ -400,8 +400,9 @@ public class Activity6 extends AppCompatActivity {
                     e6_33.setEnabled(false);
                     e6_34.setEnabled(false);
                     e6_35.setEnabled(false);
+                    AppPreference.getInstance().setBananas(AppPreference.getInstance().getBananas()-1);
                     showKonfetti();
-                    if(!AppPreference.getInstance().getIs4X4())
+                    if(!AppPreference.getInstance().getIs6x6())
                     {
                         sudokusolved.setText("HURRAY! You have unlocked 6x6");
                         sudokusolved.setTextSize(25);
