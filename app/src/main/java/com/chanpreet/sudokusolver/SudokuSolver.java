@@ -13,6 +13,8 @@ import java.util.Map;
 public class SudokuSolver {
     private static SudokuSolver Instance = null;
     private int order;
+    private int N;
+    private int M;
     private List<List<Integer>> sudoku;
     private SuccessListener successListener;
     private FailureListener failureListener;
@@ -24,9 +26,11 @@ public class SudokuSolver {
         return Instance;
     }
 
-    public SudokuSolver setSudoku(List<List<Integer>> sudoku, int order) {
+    public SudokuSolver setSudoku(List<List<Integer>> sudoku, int order, int N, int M) {
         this.sudoku = sudoku;
         this.order = order;
+        this.N = N;
+        this.M = M;
         return this;
     }
 
@@ -92,12 +96,13 @@ public class SudokuSolver {
         }
 
         //        check for invalid box input
-        int n = (int) Math.sqrt(order);
-        for (int i = 0; i < order; i += n) {
-            for (int j = 0; j < order; j += n) {
+        int a = order / N;
+        int b = order / M;
+        for (int i = 0; i < order; i += a) {
+            for (int j = 0; j < order; j += b) {
                 Map<Integer, Integer> map = new HashMap<>();
-                for (int k = i; k < i + n; k++) {
-                    for (int l = j; l < j + n; l++) {
+                for (int k = i; k < i + a; k++) {
+                    for (int l = j; l < j + b; l++) {
                         int key = sudoku.get(k).get(l);
                         if (key == 0) continue;
                         if (map.containsKey(key)) {
@@ -138,9 +143,10 @@ public class SudokuSolver {
     }
 
     private boolean isValidBox(int number, int rowNo, int columnNo) {
-        int n = (int) Math.sqrt(order);
-        for (int i = (rowNo / n) * n; i < (rowNo / n) * n + n; i++)
-            for (int j = (columnNo / n) * n; j < (columnNo / n) * n + n; j++)
+        int a = order / N;
+        int b = order / M;
+        for (int i = (rowNo / a) * a; i < (rowNo / a) * a + a; i++)
+            for (int j = (columnNo / b) * b; j < (columnNo / b) * b + b; j++)
                 if (sudoku.get(i).get(j) == number)
                     return false;
         return true;
