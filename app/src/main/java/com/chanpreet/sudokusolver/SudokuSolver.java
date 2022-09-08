@@ -18,11 +18,11 @@ public class SudokuSolver {
     private final int M;
     private final List<List<EditText>> listOfEditTexts;
 
-    public SudokuSolver(Context context, ConstraintLayout constraintLayout, int order, int n, int m) {
+    public SudokuSolver(Context context, ConstraintLayout constraintLayout, SudokuInfo sudokuInfo) {
         this.context = context;
-        this.order = order;
-        N = n;
-        M = m;
+        this.order = sudokuInfo.getOrder();
+        N = sudokuInfo.getN();
+        M = sudokuInfo.getM();
         SudokuLayoutBuilder sudokuLayoutBuilder = new SudokuLayoutBuilder(context, constraintLayout, this.order, this.N, this.M);
         this.listOfEditTexts = sudokuLayoutBuilder.build();
     }

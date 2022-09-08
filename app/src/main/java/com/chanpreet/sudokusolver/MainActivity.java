@@ -1,7 +1,7 @@
 package com.chanpreet.sudokusolver;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         //
-        Objects.requireNonNull(getSupportActionBar()).setTitle("Solve Sudoku!");
+        Objects.requireNonNull(getSupportActionBar()).hide();
         //
         //
         sudokuInfoList.add(new SudokuInfo(4, 2, 2));
@@ -39,10 +39,12 @@ public class MainActivity extends AppCompatActivity {
         sudokuInfoList.add(new SudokuInfo(12, 3, 4));
         //
         initRecyclerView();
+
+        binding.createButton.setOnClickListener(v->startActivity(new Intent(getApplicationContext(), CreateCustomActivity.class)));
     }
 
     private void initRecyclerView() {
-        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        binding.recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.HORIZONTAL));
         SudokuRecyclerViewAdapter adapter = new SudokuRecyclerViewAdapter(this, sudokuInfoList);
         binding.recyclerView.setAdapter(adapter);
         adapter.setItemClickListener(position -> {

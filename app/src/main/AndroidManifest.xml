@@ -10,8 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SudokuSolver">
         <activity
+            android:name=".CreateCustomActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +23,7 @@
         </activity>
         <activity
             android:name=".SudokuSolverActivity"
-            android:exported="false"/>
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -58,7 +58,6 @@ public class SudokuLayoutBuilder {
                 FilterArray[0] = new InputFilter.LengthFilter(order / 10 + 1);
                 editText.setFilters(FilterArray);
                 linearLayout.addView(editText, BOX_WIDTH, BOX_HEIGHT);
-//                linearLayout.addView(editText, j, params);
                 //adding single edit text to horizontal linear layout.
                 listOfEditText.get(i).add(editText);
             }
@@ -73,7 +72,7 @@ public class SudokuLayoutBuilder {
         LinearLayout parent = new LinearLayout(context);
         parent.setOrientation(LinearLayout.VERTICAL);
         parent.setBackgroundResource(R.drawable.outline_4dp);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT, 1f);
         for (int i = 0; i < order / N; i++) {
             LinearLayout linearLayout = new LinearLayout(context);
             linearLayout.setOrientation(LinearLayout.HORIZONTAL);
@@ -86,6 +85,7 @@ public class SudokuLayoutBuilder {
             linearLayout.setBackgroundResource(R.drawable.outline_2dp);
             parent.addView(linearLayout, i, params);
         }
+
         constraintLayout.addView(parent, 0, params);
     }
 }

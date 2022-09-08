@@ -1,7 +1,5 @@
 package com.chanpreet.sudokusolver;
 
-import android.os.Parcelable;
-
 import java.io.Serializable;
 
 public class SudokuInfo implements Serializable {
@@ -32,6 +30,6 @@ public class SudokuInfo implements Serializable {
     }
 
     public String getSubMatrixOrderName() {
-        return String.format("%d x %d", N, M);
+        return String.format("(%d x %d)", N, M);
     }
 }

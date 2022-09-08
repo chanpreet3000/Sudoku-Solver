@@ -32,7 +32,7 @@ public class SudokuRecyclerViewAdapter extends RecyclerView.Adapter<SudokuRecycl
     public void onBindViewHolder(@NonNull SudokuRecyclerViewHolder holder, int position) {
         holder.matrixOrderTextView.setText(sudokuInfoList.get(position).getMatrixOrderName());
         holder.subMatrixOrderTextView.setText(sudokuInfoList.get(position).getSubMatrixOrderName());
-
+        holder.itemView.setHapticFeedbackEnabled(true);
         holder.itemView.setOnClickListener(v -> {
             if (mItemClickListener != null)
                 mItemClickListener.onClick(position);
@@ -45,8 +45,8 @@ public class SudokuRecyclerViewAdapter extends RecyclerView.Adapter<SudokuRecycl
     }
 
     static public class SudokuRecyclerViewHolder extends RecyclerView.ViewHolder {
-        private TextView matrixOrderTextView;
-        private TextView subMatrixOrderTextView;
+        private final TextView matrixOrderTextView;
+        private final TextView subMatrixOrderTextView;
 
         public SudokuRecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
