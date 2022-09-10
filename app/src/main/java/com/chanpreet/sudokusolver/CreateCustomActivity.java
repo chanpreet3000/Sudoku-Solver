@@ -1,10 +1,11 @@
 package com.chanpreet.sudokusolver;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
+import android.view.animation.AnimationUtils;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.chanpreet.sudokusolver.databinding.ActivityCreateCustomBinding;
 
@@ -12,6 +13,8 @@ import java.util.Objects;
 
 public class CreateCustomActivity extends AppCompatActivity {
 
+    private static final int MIN_VALUE = 1;
+    private static final int MAX_VALUE = 16;
     private ActivityCreateCustomBinding binding;
 
     @Override
@@ -24,26 +27,44 @@ public class CreateCustomActivity extends AppCompatActivity {
 
         binding.backButton.setOnClickListener(v -> onBackPressed());
         binding.createButton.setOnClickListener(v -> createButtonClicked());
-        //Adapter
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.custom_sudoku_limit, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //setting Adapter.
-        binding.bigRowSpinner.setAdapter(adapter);
-        binding.bigColumnSpinner.setAdapter(adapter);
-        binding.smallRowSpinner.setAdapter(adapter);
-        binding.smallColumnSpinner.setAdapter(adapter);
+        binding.cardView1.setAnimation(AnimationUtils.loadAnimation(this, R.anim.slide_in_left));
+        binding.cardView2.setAnimation(AnimationUtils.loadAnimation(this, R.anim.slide_in_right));
+        binding.cardView3.setAnimation(AnimationUtils.loadAnimation(this, R.anim.slide_in_left));
+        binding.cardView4.setAnimation(AnimationUtils.loadAnimation(this, R.anim.slide_in_right));
+        binding.cardView5.setAnimation(AnimationUtils.loadAnimation(this, R.anim.slide_in_left));
 
+
+        binding.rowNumberPicker.setMinValue(MIN_VALUE);
+        binding.rowNumberPicker.setMaxValue(MAX_VALUE);
+
+        binding.columnNumberPicker.setMinValue(MIN_VALUE);
+        binding.columnNumberPicker.setMaxValue(MAX_VALUE);
+
+        binding.smallRowNumberPicker.setMinValue(MIN_VALUE);
+        binding.smallRowNumberPicker.setMaxValue(MAX_VALUE);
+
+        binding.smallColumnNumberPicker.setMinValue(MIN_VALUE);
+        binding.smallColumnNumberPicker.setMaxValue(MAX_VALUE);
     }
 
     private void createButtonClicked() {
-        int order = Integer.parseInt(binding.bigRowSpinner.getSelectedItem().toString());
-        int N = Integer.parseInt(binding.smallRowSpinner.getSelectedItem().toString());
-        int M = Integer.parseInt(binding.smallColumnSpinner.getSelectedItem().toString());
-        SudokuInfo sudokuInfo = new SudokuInfo(order, N, M);
+        int N = binding.rowNumberPicker.getValue();
+        int M = binding.columnNumberPicker.getValue();
+        int subN = binding.smallRowNumberPicker.getValue();
+        int subM = binding.smallColumnNumberPicker.getValue();
+        SudokuInfo sudokuInfo = new SudokuInfo(N, M, subN, subM);
+        if (checkSudokuInfo(sudokuInfo)) {
+            Intent intent = new Intent(getApplicationContext(), SudokuSolverActivity.class);
+            intent.putExtra("SUDOKU_INFO", sudokuInfo);
+            startActivity(intent);
+        } else {
+            Toast.makeText(getApplicationContext(), "Incorrect Information.", Toast.LENGTH_SHORT).show();
+        }
+    }
 
-        Intent intent = new Intent(getApplicationContext(), SudokuSolverActivity.class);
-        intent.putExtra("SUDOKU_INFO", sudokuInfo);
-        startActivity(intent);
+    private boolean checkSudokuInfo(SudokuInfo sudokuInfo) {
+        if (sudokuInfo.getSubN() == 1 || sudokuInfo.getSubM() == 1) {
+            return false;
+        } else return sudokuInfo.getN() % sudokuInfo.getSubN() == 0 && sudokuInfo.getM() % sudokuInfo.getSubM() == 0;
     }
 }

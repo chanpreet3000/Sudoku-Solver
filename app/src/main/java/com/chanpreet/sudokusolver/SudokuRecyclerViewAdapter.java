@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,8 @@ public class SudokuRecyclerViewAdapter extends RecyclerView.Adapter<SudokuRecycl
     private final Context context;
     private final List<SudokuInfo> sudokuInfoList;
     private OnItemClickListener mItemClickListener;
+
+    private int lastAnimated = -1;
 
     public SudokuRecyclerViewAdapter(Context context, List<SudokuInfo> sudokuInfoList) {
         this.context = context;
@@ -30,9 +33,14 @@ public class SudokuRecyclerViewAdapter extends RecyclerView.Adapter<SudokuRecycl
 
     @Override
     public void onBindViewHolder(@NonNull SudokuRecyclerViewHolder holder, int position) {
+        if (position > lastAnimated) {
+            lastAnimated = position;
+            holder.itemView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_in));
+        }
         holder.matrixOrderTextView.setText(sudokuInfoList.get(position).getMatrixOrderName());
         holder.subMatrixOrderTextView.setText(sudokuInfoList.get(position).getSubMatrixOrderName());
         holder.itemView.setHapticFeedbackEnabled(true);
+        //
         holder.itemView.setOnClickListener(v -> {
             if (mItemClickListener != null)
                 mItemClickListener.onClick(position);

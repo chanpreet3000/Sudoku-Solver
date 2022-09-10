@@ -10,4 +10,5 @@
 
 
     <color name="dark_blue">#FF01002B</color>
+    <color name="sudoku_filled">#FF01002B</color>
 </resources>

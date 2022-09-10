@@ -6,15 +6,19 @@
         <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/drawable-v24/outline_1dp.xml" value="0.1645" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/drawable-v24/outline_2dp.xml" value="0.1645" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/drawable-v24/outline_4dp.xml" value="0.1645" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/drawable-v24/outline_filled_1dp.xml" value="0.1715" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/drawable/create_btn_2_background.xml" value="0.1715" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/drawable/create_custom_btn_background.xml" value="0.1715" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/drawable/ic_arrow_left.xml" value="0.1785" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/drawable/ic_back.xml" value="0.193" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/drawable/logo.xml" value="0.1715" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/drawable/logo_r.xml" value="0.1715" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/drawable/reset_btn_background.xml" value="0.1715" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/drawable/solve_btn_background.xml" value="0.193" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/drawable/white_circle.xml" value="0.1785" />
-        <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/layout/activity_create_custom.xml" value="0.25" />
-        <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/layout/activity_create_custom.xml" value="0.264" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/layout/activity_sudoku_solver.xml" value="0.264" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/layout/sudoku_item.xml" value="0.6" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/Sudoku-Solver/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1645" />

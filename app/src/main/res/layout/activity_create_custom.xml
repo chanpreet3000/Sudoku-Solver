@@ -41,6 +41,7 @@
                 android:textSize="34sp" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="16dp"
@@ -72,22 +73,21 @@
                             android:layout_marginTop="32dp"
                             android:gravity="start"
                             android:padding="4dp"
-                            android:text="Total no of Rows in the Big Matrix."
+                            android:text="Total no of Rows in the Matrix."
                             android:textColor="@color/dark_blue"
                             android:textSize="18sp" />
 
-                        <Spinner
-                            android:id="@+id/big_row_spinner"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_gravity="start"
-                            android:gravity="center"
-                            android:padding="4dp" />
+                        <NumberPicker
+                            android:id="@+id/row_number_picker"
+                            android:layout_width="40dp"
+                            android:layout_height="100dp" />
+
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="16dp"
@@ -113,17 +113,14 @@
                             android:layout_marginTop="32dp"
                             android:gravity="start"
                             android:padding="4dp"
-                            android:text="Total no of Columns in the Big Matrix."
+                            android:text="Total no of Columns in the Matrix."
                             android:textColor="@color/dark_blue"
                             android:textSize="18sp" />
 
-                        <Spinner
-                            android:id="@+id/big_column_spinner"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_gravity="start"
-                            android:gravity="center"
-                            android:padding="4dp" />
+                        <NumberPicker
+                            android:id="@+id/column_number_picker"
+                            android:layout_width="40dp"
+                            android:layout_height="100dp" />
                     </LinearLayout>
 
                     <ImageView
@@ -136,6 +133,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="16dp"
@@ -171,18 +169,16 @@
                             android:textColor="@color/dark_blue"
                             android:textSize="18sp" />
 
-                        <Spinner
-                            android:id="@+id/small_row_spinner"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_gravity="start"
-                            android:gravity="center"
-                            android:padding="4dp" />
+                        <NumberPicker
+                            android:id="@+id/small_row_number_picker"
+                            android:layout_width="40dp"
+                            android:layout_height="100dp" />
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="16dp"
@@ -212,13 +208,10 @@
                             android:textColor="@color/dark_blue"
                             android:textSize="18sp" />
 
-                        <Spinner
-                            android:id="@+id/small_column_spinner"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_gravity="start"
-                            android:gravity="center"
-                            android:padding="4dp" />
+                        <NumberPicker
+                            android:id="@+id/small_column_number_picker"
+                            android:layout_width="40dp"
+                            android:layout_height="100dp" />
                     </LinearLayout>
 
                     <ImageView
@@ -226,6 +219,39 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:src="@drawable/ic_custom_4" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="12dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="32dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_outline_error_outline_24"
+                        app:tint="#FF1414" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:padding="4dp"
+                        android:text="If you see 0 in the sudoku after solving. It means that using above information a valid Sudoku can never be formed."
+                        android:textColor="@color/dark_blue"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
